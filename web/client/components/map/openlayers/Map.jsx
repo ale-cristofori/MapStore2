@@ -471,6 +471,16 @@ class OpenlayersMap extends React.Component {
             const getElevation = this.map.get('elevationLayer') && this.map.get('elevationLayer').get('getElevation');
             let pos = event.coordinate.slice();
             let coords = toLonLat(pos, this.props.projection);
+            this.map.forEachFeatureAtPixel(event.pixel, (feature, layer) => {
+                if (layer && layer.get('handleClickOnLayer')) {
+                    const geom = feature.getGeometry();
+                    // TODO: We should find out a better way to identify it then checking geometry type
+                    if (geom.getType() === "Point") {
+                        this.markerPresent = true;
+                        coords = toLonLat(geom.getFirstCoordinate(), this.props.projection);
+                    }
+                }
+            });
             let tLng = coords[0] / 360 % 1 * 360;
             if (tLng < -180) {
                 tLng = tLng + 360;
