@@ -23,6 +23,7 @@ import { AutocompleteCombobox } from '../../components/misc/AutocompleteCombobox
 import ConfigUtils from '../../utils/ConfigUtils';
 import { generateRandomHexColor } from '../../utils/ColorUtils';
 import uuid from 'uuid';
+
 class ThemaClassesEditor extends React.Component {
     static propTypes = {
         classification: PropTypes.array,
