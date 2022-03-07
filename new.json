@@ -1,107 +1,130 @@
 {
-  "version": 2,
-	"map": {
-		"projection": "EPSG:3857",
-		"units": "m",
-		"center": {"x": 1253121.000000, "y": 5430398.000000, "crs": "EPSG:3857"},
-    "zoom":12,
-		"maxExtent": [
-			1042280, 5172820,
-			1422950, 5574760
-		],
-		"layers": [
-			{
-			 "format": "image/png",
-			 "name": "sfondi:sfondo_colori_DBT_2011",
-			 "params": {},
-			 "singleTile": false,
-			 "title": "Sfondo Comune Firenze 2011",
-			 "type": "wms",
-			 "group": "background",
-			 "thumbURL": "http://datigis.comune.fi.it/img/thmb_sfondocoloriDBT2011CoFi.png",
-			 "url": "http://tms.comune.fi.it/geowebcache/service/wms",
-			 "visibility": true
-			 }	,
-			{
-			 "format": "image/png",
-			 "name": "sfondi:Ortofoto2017_COL_2K_CoFi",
-			 "params": {},
-			 "singleTile": false,
-			 "title": "Ortofoto Comune Firenze 2017",
-			 "type": "wms",
-			 "group": "background",
-			 "thumbURL": "http://datigis.comune.fi.it/img/thmb_sfondiOrtofoto2017CoFi.png",
-			 "url": "http://tms.comune.fi.it/geowebcache/service/wms",
-			 "visibility": false
-			 }	,
-			{
-			 "format": "image/png",
-			 "name": "sfondi:ortofoto2009",
-			 "params": {},
-			 "singleTile": false,
-			 "title": "Ortofoto Comune Firenze 2009",
-			 "type": "wms",
-			 "group": "background",
-			 "thumbURL": "http://datigis.comune.fi.it/img/thmb_ortofoto2009CoFi.png",
-			 "url": "http://tms.comune.fi.it/geowebcache/service/wms",
-			 "visibility": false
-			 }	,
-			{
-			 "format": "image/png",
-			 "name": "DBT2K:DBT_2K",
-			 "params": {},
-			 "singleTile": false,
-			 "title": "Database Topografico Comune Firenze",
-			 "type": "wms",
-			 "group": "background",
-			 "thumbURL": "http://datigis.comune.fi.it/img/thmb_dbt2k.png",
-			 "url": "http://tms.comune.intranet/geowebcache_internal/service/wms",
-			 "visibility": false
-			 }	,
-			{
-				"type": "osm",
-				"title": "Open Street Map",
-				"name": "mapnik",
-        "source": "osm",
-				"group": "background",
-        "visibility": false
-			},
-      {
-        "type": "tileprovider",
-        "title": "OpenTopoMap",
-        "provider": "OpenTopoMap",
-        "name": "OpenTopoMap",
-        "source": "OpenTopoMap",
-        "group": "background",
-        "visibility": false
-      },
-      {
-        "format": "image/jpeg",
-        "group": "background",
-        "name": "s2cloudless:s2cloudless",
-        "opacity": 1,
-        "title": "Sentinel 2 Cloudless",
-        "type": "wms",
-        "url": [
-          "https://1maps.geo-solutions.it/geoserver/wms", "https://2maps.geo-solutions.it/geoserver/wms", "https://3maps.geo-solutions.it/geoserver/wms", "https://4maps.geo-solutions.it/geoserver/wms", "https://5maps.geo-solutions.it/geoserver/wms", "https://6maps.geo-solutions.it/geoserver/wms"
+    "version": 2,
+    "map": {
+        "projection": "EPSG:3857",
+        "units": "m",
+        "center": {
+            "x": 1253121.000000,
+            "y": 5430398.000000,
+            "crs": "EPSG:3857"
+        },
+        "zoom": 12,
+        "maxExtent": [
+            1042280, 5172820,
+            1422950, 5574760
         ],
-        "source": "s2cloudless",
-        "visibility": false,
-        "singleTile": false
-      },
-      {
-        "source": "ol",
-        "group": "background",
-        "title": "Empty Background",
-        "fixed": true,
-        "type": "empty",
-        "visibility": false,
-        "args": [
-          "Empty Background", {
-            "visibility": false
-          }
+        "layers": [{
+                "format": "image/png",
+                "name": "sfondi:sfondo_colori_DBT_2011",
+                "params": {},
+                "singleTile": false,
+                "title": "Sfondo Comune Firenze 2011",
+                "type": "wms",
+                "group": "background",
+                "thumbURL": "http://datigis.comune.fi.it/img/thmb_sfondocoloriDBT2011CoFi.png",
+                "url": "http://sr-vm382-sitgwc:8080/geowebcache/service/wms",
+                "visibility": true
+            }, {
+                "format": "image/png",
+                "name": "sfondi:Ortofoto2017_COL_2K_CoFi",
+                "params": {},
+                "singleTile": false,
+                "title": "Ortofoto Comune Firenze 2017",
+                "type": "wms",
+                "group": "background",
+                "thumbURL": "http://datigis.comune.fi.it/img/thmb_sfondiOrtofoto2017CoFi.png",
+                "url": "http://sr-vm382-sitgwc:8080/geowebcache/service/wms",
+                "visibility": false
+            }, {
+                "format": "image/png",
+                "name": "sfondi:ortofoto2009",
+                "params": {},
+                "singleTile": false,
+                "title": "Ortofoto Comune Firenze 2009",
+                "type": "wms",
+                "group": "background",
+                "thumbURL": "http://datigis.comune.fi.it/img/thmb_ortofoto2009CoFi.png",
+                "url": "http://sr-vm382-sitgwc:8080/geowebcache/service/wms",
+                "visibility": false
+            }, {
+                "format": "image/png",
+                "name": "DBT2K:DBT_2K",
+                "params": {},
+                "singleTile": false,
+                "title": "Database Topografico Comune Firenze",
+                "type": "wms",
+                "group": "background",
+                "thumbURL": "http://datigis.comune.fi.it/img/thmb_dbt2k.png",
+                "url": "http://datigisnew.comune.intranet/geoserver/gwc/service/wms",
+                "visibility": false
+            }, {
+                "type": "osm",
+                "title": "Open Street Map",
+                "name": "mapnik",
+                "source": "osm",
+                "group": "background",
+                "visibility": false
+            }, {
+                "type": "tileprovider",
+                "title": "OpenTopoMap",
+                "provider": "OpenTopoMap",
+                "name": "OpenTopoMap",
+                "source": "OpenTopoMap",
+                "group": "background",
+                "visibility": false
+            }, {
+                "type": "tileprovider",
+                "title": "Open Cycle Map",
+                "provider": "custom",
+                "name": "OpenCycleMap",
+                "url": "https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png",
+                "group": "background",
+                "thumbURL": "http://datigis.comune.fi.it/img/OpenCycleMap_thmb.png",
+                "visibility": false
+            }, {
+                "type": "tileprovider",
+                "title": "Open Landscape Map",
+                "provider": "custom",
+                "name": "OpenLandscapeMap",
+                "url": "http://tile.thunderforest.com/landscape/{z}/{x}/{y}.png",
+                "group": "background",
+                "thumbURL": "http://datigis.comune.fi.it/img/OpenLandscapeMap_thmb.png",
+                "visibility": false
+            }, {
+                "type": "tileprovider",
+                "title": "Open Transport Map",
+                "provider": "custom",
+                "name": "OpenTransportMap",
+                "url": "http://tile.thunderforest.com/transport/{z}/{x}/{y}.png",
+                "group": "background",
+                "thumbURL": "http://datigis.comune.fi.it/img/OpenTransportMap_thmb.png",
+                "visibility": false
+            }, {
+                "format": "image/jpeg",
+                "group": "background",
+                "name": "s2cloudless:s2cloudless",
+                "opacity": 1,
+                "title": "Sentinel 2 Cloudless",
+                "type": "wms",
+                "url": [
+                    "https://1maps.geo-solutions.it/geoserver/wms", "https://2maps.geo-solutions.it/geoserver/wms", "https://3maps.geo-solutions.it/geoserver/wms", "https://4maps.geo-solutions.it/geoserver/wms", "https://5maps.geo-solutions.it/geoserver/wms", "https://6maps.geo-solutions.it/geoserver/wms"
+                ],
+                "source": "s2cloudless",
+                "visibility": false,
+                "singleTile": false
+            }, {
+                "source": "ol",
+                "group": "background",
+                "title": "Empty Background",
+                "fixed": true,
+                "type": "empty",
+                "visibility": false,
+                "args": [
+                    "Empty Background", {
+                        "visibility": false
+                    }
+                ]
+            }
         ]
-      }
-		]
-	}
+    }
 }
