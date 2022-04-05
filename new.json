@@ -22,7 +22,7 @@
                 "type": "wms",
                 "group": "background",
                 "thumbURL": "http://datigis.comune.fi.it/img/thmb_sfondocoloriDBT2011CoFi.png",
-                "url": "http://sr-vm382-sitgwc:8080/geowebcache/service/wms",
+                "url": "https://tms.comune.fi.it/geowebcache/service/wms",
                 "visibility": true
             }, {
                 "format": "image/png",
@@ -33,7 +33,7 @@
                 "type": "wms",
                 "group": "background",
                 "thumbURL": "http://datigis.comune.fi.it/img/thmb_sfondiOrtofoto2017CoFi.png",
-                "url": "http://sr-vm382-sitgwc:8080/geowebcache/service/wms",
+                "url": "https://tms.comune.fi.it/geowebcache/service/wms",
                 "visibility": false
             }, {
                 "format": "image/png",
@@ -44,7 +44,7 @@
                 "type": "wms",
                 "group": "background",
                 "thumbURL": "http://datigis.comune.fi.it/img/thmb_ortofoto2009CoFi.png",
-                "url": "http://sr-vm382-sitgwc:8080/geowebcache/service/wms",
+                "url": "https://tms.comune.fi.it/geowebcache/service/wms",
                 "visibility": false
             }, {
                 "format": "image/png",
@@ -55,7 +55,7 @@
                 "type": "wms",
                 "group": "background",
                 "thumbURL": "http://datigis.comune.fi.it/img/thmb_dbt2k.png",
-                "url": "http://datigisnew.comune.intranet/geoserver/gwc/service/wms",
+                "url": "http://tms.comune.intranet/geowebcache_internal/service/wms",
                 "visibility": false
             }, {
                 "type": "osm",
