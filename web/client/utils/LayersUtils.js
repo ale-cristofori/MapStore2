@@ -580,7 +580,9 @@ export const saveLayer = (layer) => {
     layer.credits ? { credits: layer.credits } : {},
     layer.extendedParams ? { extendedParams: layer.extendedParams } : {},
     layer.localizedLayerStyles ? { localizedLayerStyles: layer.localizedLayerStyles } : {},
-    layer.credits ? { credits: layer.credits } : {});
+    layer.options ? { options: layer.options } : {},
+    layer.credits ? { credits: layer.credits } : {},
+    !isNil(layer.forceProxy) ? { forceProxy: layer.forceProxy } : {});
 };
 /**
  * default initial constant regex rule for searching for a /geoserver/ string in a url

@@ -160,7 +160,8 @@
                     "title": "Error",
                     "message": "No se pudo recuperar el formato"
                 }
-            }
+            },
+            "forceProxy": "Forzar proxy"
         },
         "longitude": "Lon",
         "latitude": "Lat",
@@ -292,15 +293,7 @@
             "Examples": "Ejemplos",
             "LinkedinGroup": "Grupo Linkedin de Mapstore",
             "scrollTop": "Volver al principio de la página",
-            "footerDescription": "<strong>GeoSolutions</strong> <a href=\"mailto:sales@geosolutionsgroup.com\">sales@geosolutionsgroup.com</a>",
-            "ml": {
-                "title": "Esté informado a la última sobre los cambios en el desrrollo via listas de correo",
-                "subscribe_users": "Suscribirse a las listas de correo de usuarios",
-                "subscribe_devel": "Suscribirse a las listas de correo de desarrolladores",
-                "visit_group": "Visite este grupo",
-                "subscribe": "Suscribir",
-                "email": "Correo:"
-            }
+            "footerDescription": "<strong>GeoSolutions</strong> <a href=\"mailto:sales@geosolutionsgroup.com\">sales@geosolutionsgroup.com</a>"
         },
         "cookiesPolicyNotification": {
             "title": "Este sitio usa cookies",
@@ -426,6 +419,9 @@
             "error": "La imagen proporcionada no es válida",
             "savedMapTitle": "Mapa guardado",
             "savedMapMessage": "El mapa se ha guardado correctamente",
+            "renderingErrorTitle": "Error de procesamiento",
+            "renderingErrorMessage": "<p>La representación del mapa se detuvo y esto podría deberse a diferentes razones: </p><ul><li>El estilo aplicado contiene algunas reglas o variables que no son compatibles con las características</li>< li>La capa no está configurada correctamente</li></ul><p>Puede aplicar cambios al estilo de la capa y luego hacer clic en el botón 'Recargar mapa'. <br/> Consulte el mensaje a continuación para obtener información adicional:< /p>",
+            "reloadMap": "Recargar mapa",
             "thumbnailError": {
                 "error403": "Error al modificar la miniatura",
                 "error404": "Error al crear la miniatura",
@@ -491,6 +487,8 @@
             "toggleGroupVisibility": "Alternar la visibilidad del grupo",
             "displayLegendAndTools": "Mostrar la leyenda",
             "zoomToLayerExtent": "Zoom a la extensión de la capa",
+            "addAnnotations": "Agregar anotaciones",
+            "editAnnotations": "Editar anotaciones",
             "addLayer": "Añadir capa",
             "addLayerToGroup": "Añadir capa al grupo seleccionado",
             "addGroup": "Añadir grupo",
@@ -540,6 +538,7 @@
             "filterIconDisabled": "Habilitar filtro de capa",
             "notVisibleZoomIn": "La capa no es visible porque está fuera de los límites de resolución. Acercar para mostrar la capa",
             "notVisibleZoomOut": "La capa no es visible porque está fuera de los límites de resolución. Alejar para mostrar la capa",
+            "notVisibleSwitchTo3D": "Cambie al modo de mapa 3D para ver esta capa",
             "refreshOptions": {
                 "bbox": "Refrescar BBOX",
                 "search": "Refrescar las opciones de búsqueda",
@@ -658,7 +657,8 @@
             "previewFormatUnsupported": "Formato no compatible para la vista previa",
             "projection": "Sistema de coordenadas",
             "projectionmismatch": "Falta de coincidencia del sistema de coordenadas entre el mapa impreso y en pantalla",
-            "graticule": "agregar cuadrícula con etiquetas"
+            "graticule": "agregar cuadrícula con etiquetas",
+            "additionalLayers": "Incluir superposiciones"
         },
         "backgroundSwitcher":{
             "tooltip": "Selección del fondo"
@@ -1009,6 +1009,7 @@
                 "attribute_filter_header": "Filtro por atributo",
                 "tooltipTextField": "utiliza <b>*</b> para cualquier carácter</br>utiliza . para un solo carácter</br>utiliza <b>!</b> para caracteres especiales (* y .)</br>",
                 "tooltipTextFieldCSS": "utiliza <b>%</b> para cualquier carácter</br>utiliza <b>_</b> para un solo carácter</br>utiliza <b>\\</b> para caracteres especiales (% y _)</br>",
+                "tooltipTextField3DTiles": "use un valor compatible con la función <strong>regExp</strong> de la especificación de estilo de 3D tiles 1.0",
                 "groupField": {
                     "any": "alguna",
                     "all": "todas",
@@ -1468,12 +1469,16 @@
                 "label": "Establecer límite de visibilidad",
                 "tooltip": "Aplica automáticamente los límites de visibilidad sugeridos por el servidor"
             },
-          "domainAliases": {
-            "title": "Alias de dominio",
-            "helpTooltip": "Esta opción se utiliza para dividir el contenido en varios subdominios",
-            "addAliasTooltip": "Agregar alias",
-            "removeAliasTooltip": "Eliminar alias"
-          }
+            "domainAliases": {
+              "title": "Alias de dominio",
+              "helpTooltip": "Esta opción se utiliza para dividir el contenido en varios subdominios",
+              "addAliasTooltip": "Agregar alias",
+              "removeAliasTooltip": "Eliminar alias"
+            },
+            "allowUnsecureLayers": {
+              "label": "Permitir capas no seguras",
+              "tooltip": "Agregar una capa al mapa con esta opción habilitada obliga a la aplicación a aplicar proxy"
+            }
         },
         "uploader": {
             "filename": "Nombre del fichero",
@@ -2024,7 +2029,8 @@
                 "showConnections": "Mostrar conexiones",
                 "hideConnections": "Ocultar conexiones"
             },
-            "emptyTitle": "El panel de control está vacío"
+            "emptyTitle": "El panel de control está vacío",
+            "delete": "Eliminar panel de control"
         },
         "dashboardEmbedded": {
             "loadingSpinner": "Cargando panel de control",
@@ -2306,7 +2312,9 @@
             "imageSrcNotSupportedBase64Image": "Algunos procesadores de estilo no admiten imágenes en base64 incluso si la fuente actual es válida",
             "imageFormatEmpty": "No se puede identificar el formato de la imagen. Seleccione el formato de imagen de los disponibles en el menú desplegable 'Formato'",
             "warningTextOrderTitle": "Advertencia",
-            "warningTextOrder": "El orden de la regla que contiene el estilo de texto no pudo coincidir con el orden de representación en el mapa. Este comportamiento está relacionado con algún motor de renderizado que dibuja la etiqueta sobre otras reglas"
+            "warningTextOrder": "El orden de la regla que contiene el estilo de texto no pudo coincidir con el orden de representación en el mapa. Este comportamiento está relacionado con algún motor de renderizado que dibuja la etiqueta sobre otras reglas",
+            "invalidProperty": "El tipo de propiedad { key } no es válido",
+            "notSupportedVariable": "La variable { key } no es compatible con el conjunto de fichas"
         },
         "playback": {
             "settings": {
@@ -2348,8 +2356,12 @@
         "timeline": {
             "settings": {
                 "title": "Configuración de la línea de tiempo",
+                "snapType": "Punto de ajuste de intervalo de tiempo",
+                "snapTypeTooltip": "Cuando el ajuste a la capa guía está activo y los datos de tiempo se prolongan, el cursor se ajustará a los bordes respectivos del intervalo de tiempo (inicio/fin)",
                 "snapToGuideLayer": "Ajustar a capa de guía",
-                "snapToGuideLayerTooltip": "Hace que el cursor del tiempo se ajuste a los datos de la capa seleccionada. Desactive esta opción para desbloquear los cursores de tiempo y habilitar la personalización del paso de animación"
+                "snapToGuideLayerTooltip": "Hace que el cursor del tiempo se ajuste a los datos de la capa seleccionada. Desactive esta opción para desbloquear los cursores de tiempo y habilitar la personalización del paso de animación",
+                "snapToEnd": "Fin",
+                "snapToStart": "Inicio"
             },
             "hide": "Esconder la línea de tiempo",
             "show": "Mostrar la línea de tiempo",
@@ -2480,6 +2492,7 @@
             "zoomToContent": "Zoom al contenido",
             "addWebPageContent": "Agregar contenido de página web",
             "emptyTitle": "Esta historia esta vacia",
+            "delete": "Eliminar geostory",
             "emptyDescription": "Comience a crear una increíble geografía agregando nuevo contenido",
             "closeFullscreenMap": "Cerrar mapa a pantalla completa",
             "showFullscreenMap": "Ver mapa en pantalla completa",
@@ -3464,6 +3477,9 @@
             "noDataForPosition": "no hay datos de Street View para esta",
             "unknownError": "error desconocido, ver consola"
           }
+        },
+        "sidebarMenu": {
+          "showMoreItems": "Mostrar más elementos"
         }
     }
 }
