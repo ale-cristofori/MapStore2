@@ -25,6 +25,17 @@
                 "url": "https://tms.comune.fi.it/geowebcache/service/wms",
                 "visibility": true
             }, {
+			 "format": "image/png",
+			 "name": "rt_ofc.5k19.32bit",
+			 "params": {"map": "owsofc"},
+			 "singleTile": false,
+			 "title": "Ortofoto 2019 Geoscopio",
+			 "type": "wms",
+			 "group": "background",
+			 "thumbURL": "http://datigis.comune.fi.it/img/thmb_ortofoto2019_GeoscopioRT.png",
+			 "url": "http://www502.regione.toscana.it/ows_ofc/com.rt.wms.RTmap/wms",
+			 "visibility": false
+			 }	,{
                 "format": "image/png",
                 "name": "sfondi:Ortofoto2017_COL_2K_CoFi",
                 "params": {},
