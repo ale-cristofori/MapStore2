@@ -191,39 +191,6 @@ const updateLayerSettingsObservable = (action$, store, filter = () => true, star
                 .takeUntil(action$.ofType(LOADED_STYLE))
         );
 
-
-// function getAvailableStylesFromLayerCapabilities(layer, reset) {
-//     if (!reset && layer.availableStyles) {
-//         return Rx.Observable.of(
-//             updateSettingsParams({ availableStyles: layer.availableStyles  }),
-//             loadedStyle()
-//         );
-//     }
-//     return getLayerCapabilities(layer)
-//         .switchMap((capabilities) => {
-//             const layerCapabilities = formatCapabitiliesOptions(capabilities);
-//             if (!layerCapabilities.availableStyles) {
-//                 return Rx.Observable.of(
-//                     errorStyle('availableStyles', { status: 401 }),
-//                     loadedStyle()
-//                 );
-//             }
-
-//             return Rx.Observable.of(
-//                 updateSettingsParams({ availableStyles: layerCapabilities.availableStyles  }),
-//                 updateNode(layer.id, 'layer', { ...layerCapabilities }),
-//                 loadedStyle()
-//             );
-
-//         })
-//         .catch((err) => {
-//             const errorType = err.message.indexOf("could not be unmarshalled") !== -1 ? "parsingCapabilities" : "global";
-//             return Rx.Observable.of(errorStyle(errorType, err), loadedStyle());
-//         })
-//         .startWith(loadingStyle('global'));
-// }
-
-
 /**
  * Epics for Style Editor
  * @name epics.styleeditor
