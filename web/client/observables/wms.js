@@ -39,7 +39,7 @@ export const toDescribeLayerURL = ({name, search = {}, url} = {}) => {
         });
 };
 export const describeLayer = l => Observable.defer( () => axios.get(toDescribeLayerURL(l))).let(interceptOGCError);
-export const getLayerCapabilities = l => Observable.defer(() => WMS.getCapabilities(getCapabilitiesUrl(l)))
+export const getLayerCapabilities = (l, getDefaultCapabilitiesUrl) => Observable.defer(() => WMS.getCapabilities(getCapabilitiesUrl(l, getDefaultCapabilitiesUrl)))
     .let(interceptOGCError)
     .map(c => WMS.parseLayerCapabilities(c, l));
 

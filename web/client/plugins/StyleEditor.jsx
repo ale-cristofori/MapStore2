@@ -100,6 +100,7 @@ class StyleEditorPanel extends React.Component {
  * @prop {object} cfg.styleService GeoServer service in use, when undefined Style Editor creates style service based on layer options
  * @prop {string} cfg.styleService.baseUrl base url of service eg: '/geoserver/'
  * @prop {array} cfg.styleService.availableUrls a list of urls that can access directly to the style service
+ * @prop {bool} cfg.styleService.getDefaultCapabilitiesUrl forces use of global service capabilites URL rather than layer restricted one
  * @prop {array} cfg.styleService.formats supported formats, could be one of [ 'sld' ] or [ 'sld', 'css' ]
  * @prop {array} cfg.editingAllowedRoles all roles with edit permission eg: [ 'ADMIN' ], if null all roles have edit permission
  * @prop {array} cfg.enableSetDefaultStyle enable set default style functionality

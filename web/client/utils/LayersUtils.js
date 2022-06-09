@@ -615,17 +615,18 @@ export const findGeoServerName = ({url, regexRule}) => {
 
 /**
  * This method search for a /geoserver/  string inside the url
- * if it finds it returns a getCapabilitiesUrl to a single layer if it has a name like WORKSPACE:layerName
+ * if it finds it returns a getCapabilitiesUrl for a single layer (if it has a name like WORKSPACE:layerName)
+ * if a single layer is found and getDefaultCapabilitiesUrl is set to true, returns the default getCapabilitesUrl
  * otherwise it returns the default getCapabilitiesUrl
  */
-export const getCapabilitiesUrl = (layer) => {
+export const getCapabilitiesUrl = (layer, getDefaultCapabilitiesUrl) => {
     const matchedGeoServerName = LayersUtils.findGeoServerName({url: layer.url});
     let reqUrl = getLayerUrl(layer);
     if (!!matchedGeoServerName) {
         let urlParts = reqUrl.split(matchedGeoServerName);
         if (urlParts.length === 2) {
             let layerParts = layer.name.split(":");
-            if (layerParts.length === 2) {
+            if (layerParts.length === 2 && !getDefaultCapabilitiesUrl) {
                 reqUrl = urlParts[0] + matchedGeoServerName + layerParts [0] + "/" + layerParts[1] + "/" + urlParts[1];
             }
         }
