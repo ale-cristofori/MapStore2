@@ -1,11 +1,7 @@
 {
     "proxyUrl": {
       "url": "proxy/?url=",
-      "useCORS": [
-        "http://sr-vm113-sitgn1",
-        "http://sr-vm277-sitgn2",
-        "http://datigis.comune.intranet",
-        "http://datigis2.comune.intranet"]
+      "useCORS": []
     },
     "geoStoreUrl": "rest/geostore/",
     "mailingList": "https://groups.google.com/forum/#!forum/mapstore-users",
@@ -101,7 +97,7 @@
                   "isNew": true,
                   "autoload": false
               },
-              "selectedService": "GeoServer ComuneFI intranet WMS",
+              "selectedService": "GeoNetwork ComuneFI intranet CSW",
               "staticServices": {
                 "default_map_backgrounds": {
                   "type": "backgrounds",
@@ -148,6 +144,24 @@
                 }
               },
               "services": {
+	      "GeoNetwork ComuneFI intranet CSW": {
+                "url": "http://geonetwork.comune.intranet/geonetwork/srv/ita/csw",
+                "type": "csw",
+                "title": "GeoNetwork ComuneFI intranet CSW",
+                "autoload": true
+              }	,		
+              "GeoServer ComuneFI intranet CSW": {
+                "url": "http://datigis.comune.intranet/geoserver/csw",
+                "type": "csw",
+                "title": "GeoServer ComuneFI intranet CSW",
+                "autoload": true
+              },
+              "GeoServer Urbanistica ComuneFI intranet CSW": {
+                "url": "http://datigis2.comune.intranet/geoserver/csw",
+                "type": "csw",
+                "title": "GeoServer Urbanistica ComuneFI intranet CSW",
+                "autoload": true
+              },
               "GeoServer ComuneFI intranet WMS": {
                 "url": "http://datigis.comune.intranet/geoserver/wms",
                 "type": "wms",
@@ -160,8 +174,8 @@
                 "title": "GeoServer Urbanistica ComuneFI intranet WMS",
                 "autoload": true
               },
-				      "GeoWebCache ComuneFI intranet WMTS": {
-                "url": "http://tms.comune.intranet/geowebcache_internal/service/wmts",
+     	      "GeoWebCache ComuneFI intranet WMTS": {
+                "url": "http://datigis.comune.intranet/geoserver/gwc/service/wmts",
                 "type": "wmts",
                 "title": "GeoWebCache ComuneFI intranet WMTS",
                 "autoload": true
@@ -182,7 +196,17 @@
                             "altShiftDragRotate": false
                           }
                         }
-                      }
+                    },
+					"additionalLayers": [{
+						"type": "wms",
+						"url": "http://datigis.comune.intranet/geoserver/wms",
+						"visibility": true,
+						"title": "DTM_Lidar_2017",
+						"name": "DTM:DTM_Lidar_2017",
+						"format": "application/bil16",
+						"useForElevation": true, 
+						"hidden": true
+					}]	
                   }
               }, "Version", "DrawerMenu",
               {
@@ -302,7 +326,17 @@
                   "scalebar": {
                     "container" : "#footer-scalebar-container"
                   }
-                }
+                },
+				"additionalLayers": [{
+					"type": "wms",
+					"url": "http://datigis.comune.intranet/geoserver/wms",
+					"visibility": true,
+					"title": "DTM_Lidar_2017",
+					"name": "DTM:DTM_Lidar_2017",
+					"format": "application/bil16",
+					"useForElevation": true, 
+					"hidden": true
+				}]	
               }
               }, "AutoMapUpdate", "DrawerMenu", "Version", "Notifications", "BackgroundSelector", "Swipe", {
                 "name": "Annotations",
@@ -416,6 +450,7 @@
               }, {
                 "name": "MousePosition",
                 "cfg": {
+	          "showElevation": true,
                   "editCRS": true,
                   "showLabels": true,
                   "showToggle": true,
