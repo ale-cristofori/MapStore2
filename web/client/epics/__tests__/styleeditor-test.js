@@ -59,6 +59,7 @@ import { testEpic } from './epicTestUtils';
 
 import MockAdapter from 'axios-mock-adapter';
 import axios from '../../libs/ajax';
+import wmsCapabilities from 'raw-loader!../../test-resources/wms/GetCapabilities-1.3.0.xml';
 
 let mockAxios;
 
@@ -1379,7 +1380,7 @@ describe('Test styleeditor epics, with mock axios', () => {
 
     });
 
-    it('toggleStyleEditorEpic: test request via GeoServer rest api', (done) => {
+    it.only('toggleStyleEditorEpic: test request via GeoServer rest api', (done) => {
 
         mockAxios.onGet(/\/manifest/).reply(() => {
             return [ 200, { about: { resource: [{ '@name': 'gt-css-2.16' }]} }];
@@ -1414,6 +1415,13 @@ describe('Test styleeditor epics, with mock axios', () => {
             }}];
         });
 
+        mockAxios.onGet(/\/geoserver/).reply(() => {
+            const parser = new DOMParser();
+            let xmlWmsCapabilities = parser.parseFromString(wmsCapabilities, "text/xml");
+            xmlWmsCapabilities = (new XMLSerializer()).serializeToString(xmlWmsCapabilities);
+            return [ 200, xmlWmsCapabilities ];
+        });
+
         const state = {
             layers: {
                 flat: [
@@ -1431,6 +1439,11 @@ describe('Test styleeditor epics, with mock axios', () => {
                         opacity: 1
                     }
                 }
+            },
+            styleeditor: {
+                service: {
+                    getDefaultCapabilitiesUrl: true
+                }
             }
         };
         const NUMBER_OF_ACTIONS = 5;
@@ -1444,7 +1457,6 @@ describe('Test styleeditor epics, with mock axios', () => {
                     updateAdditionalLayerAction,
                     updateSettingsParamsAction
                 ] = actions;
-
                 expect(resetStyle.type).toBe(RESET_STYLE_EDITOR);
                 expect(loadingStyleAction.type).toBe(LOADING_STYLE);
                 expect(initStyleServiceAction.type).toBe(INIT_STYLE_SERVICE);
