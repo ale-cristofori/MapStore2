@@ -1,1 +1,1 @@
-${mapstore2.version}
+v0.0.2

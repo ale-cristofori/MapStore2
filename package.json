@@ -1,6 +1,6 @@
 {
     "name": "MapStore2-C027",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "GeoPortale - Comune di Firenze",
     "repository": "git@github.com:geosolutions-it/MapStore2-C027.git",
     "main": "index.js",
@@ -22,16 +22,16 @@
     ],
     "browserslist": {
         "production": [
-          ">0.5%",
-          "not dead",
-          "not op_mini all",
-          "not IE 11",
-          "not UCAndroid 12.12"
+            ">0.5%",
+            "not dead",
+            "not op_mini all",
+            "not IE 11",
+            "not UCAndroid 12.12"
         ],
         "development": [
-          "last 1 chrome version",
-          "last 1 firefox version",
-          "last 1 safari version"
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
         ]
     },
     "devDependencies": {
