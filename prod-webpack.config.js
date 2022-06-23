@@ -23,18 +23,20 @@ module.exports = require('./MapStore2/build/buildConfig')(
     },
     [extractThemesPlugin, ModuleFederationPlugin],
     true,
-    "dist/",
+    undefined,
     "",
     [
         new HtmlWebpackPlugin({
             template: 'indexTemplate.html',
             chunks: ['MapStore2-C027'],
+            publicPath: 'dist/',
             inject: true,
             hash: true
         }),
         new HtmlWebpackPlugin({
             template: 'embeddedTemplate.html',
             chunks: ['embedded'],
+            publicPath: 'dist/',
             inject: true,
             hash: true,
             filename: 'embedded.html'
@@ -42,6 +44,7 @@ module.exports = require('./MapStore2/build/buildConfig')(
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'geostory-embedded-template.html'),
             chunks: ['geostory-embedded'],
+            publicPath: 'dist/',
             inject: "body",
             hash: true,
             filename: 'geostory-embedded.html'
@@ -49,6 +52,7 @@ module.exports = require('./MapStore2/build/buildConfig')(
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'dashboard-embedded-template.html'),
             chunks: ['dashboard-embedded'],
+            publicPath: 'dist/',
             inject: 'body',
             hash: true,
             filename: 'dashboard-embedded.html'

@@ -24,6 +24,7 @@
 		<security:http-basic entry-point-ref="restAuthenticationEntryPoint"/>
 		<security:custom-filter ref="authenticationTokenProcessingFilter" before="FORM_LOGIN_FILTER"/>
 		<security:custom-filter ref="sessionTokenProcessingFilter" after="FORM_LOGIN_FILTER"/>
+        <security:csrf disabled="true"/>
 		<security:anonymous />
 	</security:http>
 	<!-- Entry point -->

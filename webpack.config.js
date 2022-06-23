@@ -34,7 +34,7 @@ module.exports = require('./MapStore2/build/buildConfig')(
         '/proxy': {
             target: "http://localhost:8080/mapstore"
         },
-        '/extensions.json': {
+        '/extensions': {
             target: "http://localhost:8080/mapstore"
         },
         '/dist/extensions': {

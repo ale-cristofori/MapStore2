@@ -27,7 +27,7 @@ setConfigProp('translationsPath', ['./MapStore2/web/client/translations', './tra
  *
  * setLocalConfigurationFile('localConfig.json');
 */
-setLocalConfigurationFile('localConfig.json');
+setLocalConfigurationFile('configs/localConfig.json');
 
 main(
     {

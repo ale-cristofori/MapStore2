@@ -28,7 +28,7 @@ setConfigProp('translationsPath', ['./MapStore2/web/client/translations', './tra
  *
  * ConfigUtils.setLocalConfigurationFile('localConfig.json');
  */
-setLocalConfigurationFile('localConfig.json');
+setLocalConfigurationFile('configs/localConfig.json');
 
 main(
     { ...appConfigGeostoryEmbedded, themeCfg: { theme: "firenze" } },

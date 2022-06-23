@@ -23,9 +23,9 @@ setConfigProp('translationsPath', ['./MapStore2/web/client/translations', './tra
 /**
  * Use a custom plugins configuration file with:
  *
- * setLocalConfigurationFile('localConfig.json');
+ * setLocalConfigurationFile('configs/localConfig.json');
  */
-setLocalConfigurationFile('localConfig.json');
+setLocalConfigurationFile('configs/localConfig.json');
 
 /**
  * Use a custom application configuration file with:

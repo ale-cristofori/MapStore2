@@ -20,19 +20,35 @@ scales:
   - 100000
   - 200000
   - 500000
-  
+  - 100000
+  - 500000
+  - 1000000
+  - 2000000
+  - 4000000
+  - 10000000
+  - 20000000
+
+formats:
+  - '*'
+
 #===========================================================================
 # the list of allowed hosts
 #===========================================================================
 hosts:
   - !localMatch
     dummy: true
- 
+
   - !ipMatch
     host: 127.0.0.1
     # Allow to all hosts
     mask: 0.0.0.0
-   
+
+  - !acceptAll
+    dummy: true
+
+brokenUrlPlaceholder: 'data:png,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
+disableScaleLocking: true
+
 layouts:
   #=======A4 portrait with legend=============================================
   A4 :
@@ -49,7 +65,7 @@ layouts:
           items:
             - !image
               maxWidth: 550
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           height: 600
           width: 400
@@ -74,6 +90,7 @@ layouts:
             - !legends
               horizontalAlignment: left
               #iconMaxWidth: 150
+              maxWidth: 150
               iconMaxHeight: 0
               layerSpace: 5
               layerFontSize: 12
@@ -90,7 +107,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 30
@@ -160,7 +177,7 @@ layouts:
           items:
             - !image
               maxWidth: 782
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 592
           height: 400
@@ -185,6 +202,7 @@ layouts:
             - !legends
               horizontalAlignment: left
               #iconMaxWidth: 150
+              maxWidth: 160
               iconMaxHeight: 0
               layerSpace: 5
               layerFontSize: 12
@@ -201,7 +219,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 30
@@ -252,7 +270,7 @@ layouts:
           items:
             - !image
               maxWidth: 550
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           height: 600
           width: 535
@@ -266,7 +284,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 30
@@ -336,7 +354,7 @@ layouts:
           items:
             - !image
               maxWidth: 782
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 780
           height: 400
@@ -350,7 +368,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 30
@@ -401,7 +419,7 @@ layouts:
           items:
             - !image
               maxWidth: 550
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           height: 600
           width: 535
@@ -415,7 +433,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 30
@@ -523,7 +541,7 @@ layouts:
           items:
             - !image
               maxWidth: 782
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 780
           height: 400
@@ -537,7 +555,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 30
@@ -667,7 +685,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -737,7 +755,7 @@ layouts:
           items:
             - !image
               maxWidth: 1105
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 837
           height: 594
@@ -762,6 +780,7 @@ layouts:
             - !legends
               horizontalAlignment: left
               #iconMaxWidth: 150
+              maxWidth: 240
               iconMaxHeight: 0
               layerSpace: 5
               layerFontSize: 12
@@ -778,7 +797,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -829,7 +848,7 @@ layouts:
           items:
             - !image
               maxWidth: 780
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 760
           height: 850
@@ -843,7 +862,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -913,7 +932,7 @@ layouts:
           items:
             - !image
               maxWidth: 1105
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 1102
           height: 594
@@ -927,7 +946,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -978,7 +997,7 @@ layouts:
           items:
             - !image
               maxWidth: 780
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 760
           height: 850
@@ -992,7 +1011,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -1100,7 +1119,7 @@ layouts:
           items:
             - !image
               maxWidth: 1105
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 1102
           height: 594
@@ -1114,7 +1133,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -1204,7 +1223,7 @@ layouts:
           items:
             - !image
               maxWidth: 1105
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 837
           height: 1340
@@ -1245,7 +1264,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -1315,7 +1334,7 @@ layouts:
           items:
             - !image
               maxWidth: 1563
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 1184
           height: 840
@@ -1356,7 +1375,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -1407,7 +1426,7 @@ layouts:
           items:
             - !image
               maxWidth: 1105
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 1111
           height: 1340
@@ -1421,7 +1440,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -1491,7 +1510,7 @@ layouts:
           items:
             - !image
               maxWidth: 1563
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 1600
           height: 840
@@ -1505,7 +1524,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -1556,7 +1575,7 @@ layouts:
           items:
             - !image
               maxWidth: 1105
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 1111
           height: 1340
@@ -1570,7 +1589,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
@@ -1678,7 +1697,7 @@ layouts:
           items:
             - !image
               maxWidth: 1563
-              url: '/${configDir}/print_header.png'
+              url: 'file://${configDir}/print_header.png'
         - !map
           width: 1600
           height: 840
@@ -1692,7 +1711,7 @@ layouts:
             - !image
               maxWidth: 40
               maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
+              url: 'file://${configDir}/Arrow_North_CFCF.svg'
               rotation: '${rotation}'
         - !columns
           absoluteX: 42
