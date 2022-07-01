@@ -83,7 +83,7 @@
                 }
             },
           "maptype": {
-            "mapType": "{context.mode === 'desktop' || context.mode === 'embedded' ? 'openlayers' : 'leaflet'}"
+            "mapType": "{context.mode === 'desktop' || context.mode === 'embedded' || context.mode === 'dashboard-embedded' || context.mode === 'geostory-embedded' ? 'openlayers' : 'leaflet'}"
           },
           "maps": {
             "mapType": "openlayers"
@@ -149,7 +149,7 @@
                 "type": "csw",
                 "title": "GeoNetwork ComuneFI intranet CSW",
                 "autoload": false
-              }	,		
+              }	,
               "GeoServer ComuneFI intranet CSW": {
                 "url": "http://datigis.comune.intranet/geoserver/csw",
                 "type": "csw",
@@ -204,9 +204,9 @@
 						"title": "DTM_Lidar_2017",
 						"name": "DTM:DTM_Lidar_2017",
 						"format": "application/bil16",
-						"useForElevation": true, 
+						"useForElevation": true,
 						"hidden": true
-					}]	
+					}]
                   }
               }, "Version", "DrawerMenu",
               {
@@ -334,9 +334,9 @@
 					"title": "DTM_Lidar_2017",
 					"name": "DTM:DTM_Lidar_2017",
 					"format": "application/bil16",
-					"useForElevation": true, 
+					"useForElevation": true,
 					"hidden": true
-				}]	
+				}]
               }
               }, "AutoMapUpdate", "DrawerMenu", "Version", "Notifications", "BackgroundSelector", "Swipe", {
                 "name": "Annotations",
@@ -725,11 +725,14 @@
           {
             "name": "DashboardEditor",
             "cfg": {
-               "catalog": {
-                "url": "https://datigis.comune.fi.it/geoserver/csw",
-                "type": "csw",
-                "title": "GeoServer ComuneFI CSW",
-                "autoload": true
+              "selectedService": "GeoServer ComuneFI CSW",
+               "services": {
+                "GeoServer ComuneFI CSW": {
+                  "url": "https://datigis.comune.fi.it/geoserver/csw",
+                  "type": "csw",
+                  "title": "GeoServer ComuneFI CSW",
+                  "autoload": true
+                }
               },
               "containerPosition": "columns"
             }
