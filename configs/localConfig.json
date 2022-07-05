@@ -144,23 +144,32 @@
                 }
               },
               "services": {
-	      "GeoNetwork ComuneFI intranet CSW": {
+	            "GeoNetwork ComuneFI intranet CSW": {
                 "url": "http://geonetwork.comune.intranet/geonetwork/srv/ita/csw",
                 "type": "csw",
                 "title": "GeoNetwork ComuneFI intranet CSW",
-                "autoload": false
-              }	,
+                "autoload": false,
+                "filter": {
+                  "staticFilter": "<ogc:Or><ogc:PropertyIsEqualTo><ogc:PropertyName>dc:type</ogc:PropertyName><ogc:Literal>dataset</ogc:Literal></ogc:PropertyIsEqualTo><ogc:PropertyIsEqualTo><ogc:PropertyName>dc:type</ogc:PropertyName><ogc:Literal>service</ogc:Literal></ogc:PropertyIsEqualTo><ogc:PropertyIsEqualTo><ogc:PropertyName>dc:type</ogc:PropertyName><ogc:Literal>http://purl.org/dc/dcmitype/Dataset</ogc:Literal></ogc:PropertyIsEqualTo></ogc:Or>"
+                }
+              },
               "GeoServer ComuneFI intranet CSW": {
                 "url": "http://datigis.comune.intranet/geoserver/csw",
                 "type": "csw",
                 "title": "GeoServer ComuneFI intranet CSW",
-                "autoload": false
+                "autoload": false,
+                "filter": {
+                  "staticFilter": "<ogc:Or><ogc:PropertyIsEqualTo><ogc:PropertyName>dc:type</ogc:PropertyName><ogc:Literal>dataset</ogc:Literal></ogc:PropertyIsEqualTo><ogc:PropertyIsEqualTo><ogc:PropertyName>dc:type</ogc:PropertyName><ogc:Literal>service</ogc:Literal></ogc:PropertyIsEqualTo><ogc:PropertyIsEqualTo><ogc:PropertyName>dc:type</ogc:PropertyName><ogc:Literal>http://purl.org/dc/dcmitype/Dataset</ogc:Literal></ogc:PropertyIsEqualTo></ogc:Or>"
+                }
               },
               "GeoServer Urbanistica ComuneFI intranet CSW": {
                 "url": "http://datigis2.comune.intranet/geoserver/csw",
                 "type": "csw",
                 "title": "GeoServer Urbanistica ComuneFI intranet CSW",
-                "autoload": false
+                "autoload": false,
+                "filter": {
+                  "staticFilter": "<ogc:Or><ogc:PropertyIsEqualTo><ogc:PropertyName>dc:type</ogc:PropertyName><ogc:Literal>dataset</ogc:Literal></ogc:PropertyIsEqualTo><ogc:PropertyIsEqualTo><ogc:PropertyName>dc:type</ogc:PropertyName><ogc:Literal>service</ogc:Literal></ogc:PropertyIsEqualTo><ogc:PropertyIsEqualTo><ogc:PropertyName>dc:type</ogc:PropertyName><ogc:Literal>http://purl.org/dc/dcmitype/Dataset</ogc:Literal></ogc:PropertyIsEqualTo></ogc:Or>"
+                }
               },
               "GeoServer ComuneFI intranet WMS": {
                 "url": "http://datigis.comune.intranet/geoserver/wms",
