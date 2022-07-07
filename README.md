@@ -1,8 +1,6 @@
 GeoPortale - Comune di Firenze
 ==========
 
-Aligned to 2021.01.xx mapstore stable branch
-
 Quick Start
 ------------
 
