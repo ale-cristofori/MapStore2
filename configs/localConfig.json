@@ -16,6 +16,7 @@
       "cesium": {
           "flyTo": true,
           "navigationTools": true,
+          "depthAgainstTerrain": false,
           "terrainProvider": {
             "type": "ellipsoid"
         }
